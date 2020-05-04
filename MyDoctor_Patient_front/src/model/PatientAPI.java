@@ -36,7 +36,7 @@ public class PatientAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String output = itemObj.insertDetails(request.getParameter("name"),
-				 request.getParameter("gender"),
+				 request.getParameter("rdoGender"),
 				request.getParameter("phone"),
 				request.getParameter("NIC"),
 				request.getParameter("email"),
@@ -54,7 +54,7 @@ public class PatientAPI extends HttpServlet {
 		Map paras = getParasMap(request);
 		 String output = itemObj.updateDetails(paras.get("hidPatientIdSave").toString(),
 		 paras.get("name").toString(),
-		 paras.get("gender").toString(),
+		 paras.get("rdoGender").toString(),
 		paras.get("phone").toString(),
 		paras.get("NIC").toString(),
 		paras.get("email").toString(),

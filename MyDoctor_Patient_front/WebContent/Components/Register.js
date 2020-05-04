@@ -76,9 +76,9 @@ $(document).on("click", ".btnUpdate", function(event)
  $("#gender").val($(this).closest("tr").find('td:eq(1)').text());
  $("#phone").val($(this).closest("tr").find('td:eq(2)').text());
  $("#NIC").val($(this).closest("tr").find('td:eq(3)').text());
- $("#email").val($(this).closest("tr").find('td:eq(3)').text());
- $("#username").val($(this).closest("tr").find('td:eq(3)').text());
- $("#password").val($(this).closest("tr").find('td:eq(3)').text());
+ $("#email").val($(this).closest("tr").find('td:eq(4)').text());
+ $("#username").val($(this).closest("tr").find('td:eq(5)').text());
+ $("#password").val($(this).closest("tr").find('td:eq(6)').text());
 });
 
 //REMOVE==========================================
@@ -133,16 +133,15 @@ if ($("#name").val().trim() == "")
  {
  return "Insert name";
  }
-//GENDER
-if ($("#gender").val().trim() == "")
- {
- return "Insert name";
- }
 ////GENDER
-//if ($('input[name="rdoGender"]:checked').length === 0)
-//{
-// return "Select gender.";
-//}
+//if ($("#gender").val().trim() == "")
+// {
+// return "Insert name";
+// }
+//GENDER
+if ($('input[name="rdoGender"]:checked').length === 0) {
+	return "Select gender!";
+}
 
 // is numerical value
 var tmpPrice = $("#phone").val().trim();

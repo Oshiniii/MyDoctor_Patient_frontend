@@ -32,7 +32,7 @@
  <input type="text" id="name" name="name" class= "form-control form-control-sm">
  </div>
  
- <!-- GENDER 
+ <!-- GENDER -->
  <div class="input-group input-group-sm mb-3">
  <div class="input-group-prepend">
  <span class="input-group-text" id="lblName">Gender: </span>
@@ -41,15 +41,15 @@
 <input type="radio" id="rdoGenderMale" name="rdoGender" value="Male">
  &nbsp;&nbsp;Female
 <input type="radio" id="rdoGenderFemale" name="rdoGender" value="Female">
- </div> -->
+ </div> 
  
-  <!-- GENDER -->
+  <!-- GENDER 
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
  <span class="input-group-text" id="lblName">Gender: </span>
  </div>
  <input type="text" id="gender" name="gender" class= "form-control form-control-sm">
- </div>
+ </div> -->
  <!-- PHONE -->
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
