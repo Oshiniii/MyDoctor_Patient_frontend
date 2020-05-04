@@ -89,7 +89,7 @@ $(document).on("click", ".btnRemove", function(event)
 		 {
 		 url : "PatientAPI",
 		 type : "DELETE",
-		 data : "patientId=" + $(this).data("patientId"),
+		 data : "patientId=" + $(this).data("patientid"),
 		 dataType : "text",
 		 complete : function(response, status)
 		 {
@@ -134,10 +134,15 @@ if ($("#name").val().trim() == "")
  return "Insert name";
  }
 //GENDER
-if ($('input[name="rdoGender"]:checked').length === 0)
+if ($("#gender").val().trim() == "")
  {
- return "Select gender.";
+ return "Insert name";
  }
+////GENDER
+//if ($('input[name="rdoGender"]:checked').length === 0)
+//{
+// return "Select gender.";
+//}
 
 // is numerical value
 var tmpPrice = $("#phone").val().trim();
@@ -145,11 +150,11 @@ if (!$.isNumeric(tmpPrice))
  {
  return "Insert a numerical value for phone";
  }
-//PHONE-------------------------------
-if ($("#phone").val().trim() == "")
- {
- return "Insert phone";
- }
+////PHONE-------------------------------
+//if ($("#phone").val().trim() == "")
+// {
+// return "Insert phone";
+// }
 // NIC------------------------
 if ($("#NIC").val().trim() == "")
  {
@@ -173,14 +178,14 @@ if ($("#password").val().trim() == "")
 return true;
 }
 
-function getStudentCard(name, gender, year)
-{
-var title = (gender == "Male") ? "Mr." : "Ms.";
-
-var student = "";
- student += "<div class=\"student card bg-light m-2\" style=\"max-width: 10rem; float: left;\">";
- student += "<div class=\"card-body\">";
- student += title + " " + name + ",";
- student += "<br>";
-return student;
-}
+//function getStudentCard(name, gender, year)
+//{
+//var title = (gender == "Male") ? "Mr." : "Ms.";
+//
+//var student = "";
+// student += "<div class=\"student card bg-light m-2\" style=\"max-width: 10rem; float: left;\">";
+// student += "<div class=\"card-body\">";
+// student += title + " " + name + ",";
+// student += "<br>";
+//return student;
+//}

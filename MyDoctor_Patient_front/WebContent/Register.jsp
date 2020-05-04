@@ -1,14 +1,18 @@
 <%@page import="model.Patient"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<meta charset="ISO-8859-1">
 <title>Student details</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/main.js"></script>
+<script src="Components/Register.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,6 +23,7 @@
 
 <form id="formPatient" name="formPatient" method="post" action="index.jsp">
 
+
  <!-- NAME -->
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
@@ -27,7 +32,7 @@
  <input type="text" id="name" name="name" class= "form-control form-control-sm">
  </div>
  
- <!-- GENDER -->
+ <!-- GENDER 
  <div class="input-group input-group-sm mb-3">
  <div class="input-group-prepend">
  <span class="input-group-text" id="lblName">Gender: </span>
@@ -36,8 +41,15 @@
 <input type="radio" id="rdoGenderMale" name="rdoGender" value="Male">
  &nbsp;&nbsp;Female
 <input type="radio" id="rdoGenderFemale" name="rdoGender" value="Female">
- </div>
+ </div> -->
  
+  <!-- GENDER -->
+ <div class="input-group input-group-sm mb-3">
+<div class="input-group-prepend">
+ <span class="input-group-text" id="lblName">Gender: </span>
+ </div>
+ <input type="text" id="gender" name="gender" class= "form-control form-control-sm">
+ </div>
  <!-- PHONE -->
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
@@ -99,3 +111,4 @@
 
 </body>
 </html>
+>
