@@ -24,17 +24,50 @@ if (status != true)
  return;
  }
 // If valid------------------------
-var student = getStudentCard($("#name").val().trim(),
-		 $('input[name="rdoGender"]:checked').val(),
-		 $("#ddlYear").val());
-		 $("#colStudents").append(student);
-
-		 $("#alertSuccess").text("Saved successfully.");
-		 $("#alertSuccess").show();
-
-		// $("#formStudent")[0].reset();
-		 $("#formregister").submit();
+var type = ($("#hidPatientIdSave").val() == "") ? "POST" : "PUT";
+$.ajax(
+		{
+		 url : "PatientAPI",
+		 type : type,
+		 data : $("#formPatient").serialize(),
+		 dataType : "text",
+		 complete : function(response, status)
+		 {
+		 onItemSaveComplete(response.responseText, status);
+		 }
+		});
 });
+
+function onItemSaveComplete(response, status)
+{
+	if(status = "success")
+		{
+	var resultSet = JSON.parse(response);
+	if (resultSet.status.trim() == "success")
+	{
+	 $("#alertSuccess").text("Successfully saved.");
+	 $("#alertSuccess").show();
+	$("#divItemsGrid").html(resultSet.data);
+	} else if (resultSet.status.trim() == "error")
+	{
+	 $("#alertError").text(resultSet.data);
+	 $("#alertError").show();
+	}
+	
+	else if (status == "error")
+	{
+	 $("#alertError").text("Error while saving.");
+	 $("#alertError").show();
+	} else
+	{
+	 $("#alertError").text("Unknown error while saving..");
+	 $("#alertError").show();
+	}
+	$("#hidPatientIdSave").val("");
+	$("#formPatient")[0].reset();
+		}
+}
+
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 {
@@ -42,20 +75,55 @@ $(document).on("click", ".btnUpdate", function(event)
  $("#name").val($(this).closest("tr").find('td:eq(0)').text());
  $("#gender").val($(this).closest("tr").find('td:eq(1)').text());
  $("#phone").val($(this).closest("tr").find('td:eq(2)').text());
- $("#gender").val($(this).closest("tr").find('td:eq(3)').text());
+ $("#NIC").val($(this).closest("tr").find('td:eq(3)').text());
  $("#email").val($(this).closest("tr").find('td:eq(3)').text());
  $("#username").val($(this).closest("tr").find('td:eq(3)').text());
  $("#password").val($(this).closest("tr").find('td:eq(3)').text());
 });
 
 //REMOVE==========================================
-$(document).on("click", ".remove", function(event)
-{
- $(this).closest(".student").remove();
 
- $("#alertSuccess").text("Removed successfully.");
- $("#alertSuccess").show();
-}); 
+$(document).on("click", ".btnRemove", function(event)
+		{
+		 $.ajax(
+		 {
+		 url : "PatientAPI",
+		 type : "DELETE",
+		 data : "patientId=" + $(this).data("patientId"),
+		 dataType : "text",
+		 complete : function(response, status)
+		 {
+		 onItemDeleteComplete(response.responseText, status);
+		 }
+		 });
+		});
+		 
+		
+		function onItemDeleteComplete(response, status)
+		{
+		if (status == "success")
+		 {
+		 var resultSet = JSON.parse(response);
+		 if (resultSet.status.trim() == "success")
+		 {
+		 $("#alertSuccess").text("Successfully deleted.");
+		 $("#alertSuccess").show();
+		 $("#divItemsGrid").html(resultSet.data);
+		 } else if (resultSet.status.trim() == "error")
+		 {
+		 $("#alertError").text(resultSet.data);
+		 $("#alertError").show();
+		 }
+		 } else if (status == "error")
+		 {
+		 $("#alertError").text("Error while deleting.");
+		 $("#alertError").show();
+		 } else
+		 {
+		 $("#alertError").text("Unknown error while deleting..");
+		 $("#alertError").show();
+		 }
+		}
 
 // CLIENTMODEL=========================================================================
 function validatePatientForm()
