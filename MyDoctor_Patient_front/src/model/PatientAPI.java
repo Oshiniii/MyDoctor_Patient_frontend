@@ -53,11 +53,11 @@ public class PatientAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map paras = getParasMap(request);
 		 String output = itemObj.updateDetails(paras.get("hidPatientIdSave").toString(),
-		 paras.get("name").toString(),
+		 paras.get("name").toString().replace("+", " "),
 		 paras.get("rdoGender").toString(),
 		paras.get("phone").toString(),
 		paras.get("NIC").toString(),
-		paras.get("email").toString(),
+		paras.get("email").toString().replace("%40", "@"),
 		paras.get("username").toString(),
 		paras.get("password").toString());
 		response.getWriter().write(output); 
