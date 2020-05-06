@@ -136,7 +136,7 @@ function validatePatientForm() {
 	var contactNochar = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	var contact = $("#phone").val().trim();
 	if (contactNochar.test(contact) == false) {
-		return "Should enter valid Contact No !";
+		return "Should enter valid Contact No with 10 digits !";
 	}
 	console.log(contactNochar.test(contact));
 
@@ -148,7 +148,7 @@ function validatePatientForm() {
 	var NICchar = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	var NIC = $("#NIC").val().trim();
 	if (NICchar.test(NIC) == false) {
-		return "Should enter valid NIC !";
+		return "Should enter valid NIC with 10 digits !";
 	}
 	console.log(contactNochar.test(contact));
 	// EMAIl------------------------
