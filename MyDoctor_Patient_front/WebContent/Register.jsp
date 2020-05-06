@@ -6,11 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<meta charset="ISO-8859-1">
-<title>Student details</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" >
 <script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/Register.js"></script>
 </head>
@@ -21,8 +17,7 @@
 
  <h1 class="m-3">Patient details</h1>
 
-<form id="formPatient" name="formPatient" method="post" action="index.jsp">
-
+<form id="formPatient" name="formPatient" method="post" action="index.jsp" style="width:520px;'">
 
  <!-- NAME -->
  <div class="input-group input-group-sm mb-3">
@@ -32,7 +27,20 @@
  <input type="text" id="name" name="name" class= "form-control form-control-sm">
  </div>
  
- <!-- GENDER -->
+ <!--GENDER -->
+ <div class="input-group input-group-sm mb-3">
+ <div class="input-group-prepend">
+ <span class="input-group-text" id="lblName">Gender: </span>
+ </div>
+ <select id="gender" name="gender">
+ <option value="0">--Select gender--</option>
+ <option value="Male">Male</option>
+ <option value="Female">Female</option>
+ 
+ </select>
+ </div>
+ 
+ <!-- GENDER 
  <div class="input-group input-group-sm mb-3">
  <div class="input-group-prepend">
  <span class="input-group-text" id="lblName">Gender: </span>
@@ -41,15 +49,8 @@
 <input type="radio" id="rdoGenderMale" name="rdoGender" value="Male">
  &nbsp;&nbsp;Female
 <input type="radio" id="rdoGenderFemale" name="rdoGender" value="Female">
- </div> 
- 
-  <!-- GENDER 
- <div class="input-group input-group-sm mb-3">
-<div class="input-group-prepend">
- <span class="input-group-text" id="lblName">Gender: </span>
- </div>
- <input type="text" id="gender" name="gender" class= "form-control form-control-sm">
  </div> -->
+ 
  <!-- PHONE -->
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
@@ -69,16 +70,16 @@
  <!-- EMAIL -->
  <div class="input-group input-group-sm mb-3">
 <div class="input-group-prepend">
- <span class="input-group-text" id="lblEmail">Email: </span>
+ <span class="input-group-text" id="lblEmail">Email:&nbsp;&nbsp;&nbsp;&nbsp;</span>
  </div>
- <input type="text" id="email" name="email" class= "form-control form-control-sm">
+ <input type="email" id="email" name="email" class= "form-control form-control-sm">
  </div>
  
  <!-- USERNAME -->
  <div class="input-group input-group-sm mb-3">
 
 <div class="input-group-prepend">
- <span class="input-group-text" id="lblUsername">Username: </span>
+ <span class="input-group-text" id="lblUsername">Username:</span>
  </div>
  <input type="text" id="username" name="username" class= "form-control form-control-sm">
  </div>
@@ -86,7 +87,7 @@
  <!-- PASSWORD -->
  <div class="input-group input-group-sm mb-3">
 	<div class="input-group-prepend">
- 		<span class="input-group-text" id="lblPassword">Password: </span>
+ 		<span class="input-group-text" id="lblPassword">Password:</span>
  	</div>
  		<input type="text" id="password" name="password" class= "form-control form-control-sm">
  	</div>
@@ -105,6 +106,10 @@
  %>
 </div>
 
+</div>
+<div class="row">
+<div class="col-12" id="colStudents">
+</div>
 </div>
  </div>
 </div>
