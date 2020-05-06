@@ -132,8 +132,8 @@ function validatePatientForm() {
 	if ($("#phone").val().trim() == "") {
 		return "Insert Contact number !";
 	}
-	
-	var contactNochar =/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+	var contactNochar = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	var contact = $("#phone").val().trim();
 	if (contactNochar.test(contact) == false) {
 		return "Should enter valid Contact No !";
@@ -148,40 +148,42 @@ function validatePatientForm() {
 	if ($("#email").val().trim() == "") {
 		return "Insert email !";
 	}
-	
-	//valid email characters
+
+	// valid email characters
 	var emailchar = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	var email = $("#email").val().trim();
 	if (emailchar.test(email) == false) {
 		return "Should enter valid Email Address !";
 	}
 	console.log(emailchar.test(email));
-	
+
 	// USERNAME------------------------
 	if ($("#username").val().trim() == "") {
 		return "Insert username !";
 	}
+
+	// //User validation
+	// var usernamechar =/^[a-zA-Z0-9]+$/;
+	// var username = $("#username").val().trim();
+	// if (usernamechar.test(username) == false) {
+	// return "Should enter valid Username with Capital letters A-Z & Numbers
+	// 0-9";
+	// }
+	// console.log(usernamechar.test(username));
 	
-//	//User validation
-//	var usernamechar =/^[a-zA-Z0-9]+$/;
-//	var username = $("#username").val().trim();
-//	if (usernamechar.test(username) == false) {
-//		return "Should enter valid Username with Capital letters A-Z & Numbers 0-9";
-//	}
-	console.log(usernamechar.test(username));
 	// PASSWORD------------------------
 	if ($("#password").val().trim() == "") {
 		return "Insert password !";
 	}
-	
-//	//Password validation
-//	var passwordchar =/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&+=])(?=\S+$).{8,}$/;
-//	var password = $("#password").val().trim();
-//	if (passwordchar.test(password) == false) {
-//		return "Should enter valid password !";
-//	}
-	console.log(passwordchar.test(password));
+
+	// //Password validation
+	// var passwordchar
+	// =/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&+=])(?=\S+$).{8,}$/;
+	// var password = $("#password").val().trim();
+	// if (passwordchar.test(password) == false) {
+	// return "Should enter valid password !";
+	// }
+	// console.log(passwordchar.test(password));
 	return true;
-	
-	
+
 }

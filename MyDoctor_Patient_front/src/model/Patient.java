@@ -85,7 +85,7 @@ public String readDetails()
 		 return "Error while connecting to the database for reading."; 
 	 }
 	 // Prepare the html table to be displayed
-	 output = "<table border='1'><tr><th>name</th><th>gender</th><th>phone</th><th>NIC</th><th>email</th><th>username</th><th>password</th><th>Update</th><th>Remove</th></tr>";
+	 output = "<table border='1'><tr><th>Name</th><th>Gender</th><th>Phone</th><th>NIC</th><th>Email</th><th>Username</th><th>Password</th><th>Update</th><th>Remove</th></tr>";
 	 String query = "select * from patientdetails";
 	 Statement stmt = con.createStatement();
 	 ResultSet rs = stmt.executeQuery(query);
