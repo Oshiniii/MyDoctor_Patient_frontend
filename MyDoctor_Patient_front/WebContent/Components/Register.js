@@ -144,6 +144,13 @@ function validatePatientForm() {
 	if ($("#NIC").val().trim() == "") {
 		return "Insert NIC !";
 	}
+	
+	var NICchar = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	var NIC = $("#NIC").val().trim();
+	if (NICchar.test(NIC) == false) {
+		return "Should enter valid NIC !";
+	}
+	console.log(contactNochar.test(contact));
 	// EMAIl------------------------
 	if ($("#email").val().trim() == "") {
 		return "Insert email !";
